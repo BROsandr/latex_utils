@@ -1,0 +1,29 @@
+\documentclass{article}
+  \usepackage{xltxtra}
+
+  \usepackage      {polyglossia}
+  \setmainlanguage {russian}
+  \setotherlanguage{english}
+
+  \setmainfont{FreeSerif}
+  \setsansfont{FreeSans}
+  \setmonofont{FreeMono}
+
+  \usepackage{array}
+
+  \newcommand{\handplaceholder}[3]{
+    \bgroup
+      \renewcommand*{\arraystretch}{0}
+      \begin{tabular}{@{}>{\centering\arraybackslash}p{#1}@{}}
+        #2 \\
+        \hline
+        {\scriptsize #3}
+      \end{tabular}
+    \egroup
+  }
+
+\begin{document}
+
+  Студент: \handplaceholder{3cm}{Харламов}{Фамилия} \hfill \today
+
+\end{document}
