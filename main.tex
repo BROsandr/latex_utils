@@ -22,8 +22,49 @@
     \egroup
   }
 
+  \usepackage{etoolbox}
+  \preto\tabular{\setcounter{magicrownumbers}{0}}
+  \newcounter{magicrownumbers}
+  \newcommand\rownumber{\stepcounter{magicrownumbers}\arabic{magicrownumbers}}
+
 \begin{document}
 
+% ███████╗██╗ ██████╗ ███╗   ██╗ █████╗ ████████╗██╗   ██╗██████╗ ███████╗
+% ██╔════╝██║██╔════╝ ████╗  ██║██╔══██╗╚══██╔══╝██║   ██║██╔══██╗██╔════╝
+% ███████╗██║██║  ███╗██╔██╗ ██║███████║   ██║   ██║   ██║██████╔╝█████╗  
+% ╚════██║██║██║   ██║██║╚██╗██║██╔══██║   ██║   ██║   ██║██╔══██╗██╔══╝  
+% ███████║██║╚██████╔╝██║ ╚████║██║  ██║   ██║   ╚██████╔╝██║  ██║███████╗
+% ╚══════╝╚═╝ ╚═════╝ ╚═╝  ╚═══╝╚═╝  ╚═╝   ╚═╝    ╚═════╝ ╚═╝  ╚═╝╚══════╝
+%                                                                
   Студент: \handplaceholder{3cm}{Харламов}{Фамилия} \hfill \today
+
+% ███╗   ██╗██╗   ██╗███╗   ███╗████████╗ █████╗ ██████╗ ██╗     ███████╗
+% ████╗  ██║██║   ██║████╗ ████║╚══██╔══╝██╔══██╗██╔══██╗██║     ██╔════╝
+% ██╔██╗ ██║██║   ██║██╔████╔██║   ██║   ███████║██████╔╝██║     █████╗  
+% ██║╚██╗██║██║   ██║██║╚██╔╝██║   ██║   ██╔══██║██╔══██╗██║     ██╔══╝  
+% ██║ ╚████║╚██████╔╝██║ ╚═╝ ██║   ██║   ██║  ██║██████╔╝███████╗███████╗
+% ╚═╝  ╚═══╝ ╚═════╝ ╚═╝     ╚═╝   ╚═╝   ╚═╝  ╚═╝╚═════╝ ╚══════╝╚══════╝
+%                                                                        
+  \begin{tabular}{@{\makebox[3em][r]{\rownumber\space}} | r}
+    Something \\
+    Other stuff \\
+    MAGIC!
+  \end{tabular}
+% or start numbering with the second row
+% \documentclass{article}
+% \usepackage{array,etoolbox}
+% \preto\tabular{\setcounter{magicrownumbers}{0}}
+% \newcounter{magicrownumbers}
+% \def\rownumber{}
+% \begin{document}
+
+% \begin{tabular}{@{\makebox[3em][r]{\rownumber\space}} | r}
+%   Something 
+%   \gdef\rownumber{\stepcounter{magicrownumbers}\arabic{magicrownumbers}} \\
+%   Other stuff \\
+%   MAGIC!
+% \end{tabular}
+
+% \end{document}
 
 \end{document}
