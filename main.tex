@@ -9,15 +9,15 @@
   \setsansfont{FreeSans}
   \setmonofont{FreeMono}
 
-  \usepackage{array}
+  \usepackage{array, multirow}
 
-  \newcommand{\handplaceholder}[3]{
+  \newcommand{\handplaceholder}[4]{
     \bgroup
       \renewcommand*{\arraystretch}{0}
-      \begin{tabular}{@{}>{\centering\arraybackslash}p{#1}@{}}
-        #2 \\
-        \hline
-        {\scriptsize #3}
+      \begin{tabular}{@{}l>{\centering\arraybackslash}p{#1}@{}}
+        #2 & #3 \\
+        \cline{2-2}
+           & {\scriptsize #4}
       \end{tabular}
     \egroup
   }
@@ -36,7 +36,7 @@
 % ███████║██║╚██████╔╝██║ ╚████║██║  ██║   ██║   ╚██████╔╝██║  ██║███████╗
 % ╚══════╝╚═╝ ╚═════╝ ╚═╝  ╚═══╝╚═╝  ╚═╝   ╚═╝    ╚═════╝ ╚═╝  ╚═╝╚══════╝
 %                                                                
-  Студент: \handplaceholder{3cm}{Харламов}{Фамилия} \hfill \today
+  \handplaceholder{3cm}{Студент:}{Харламов}{Фамилия} \hfill \today
 
 % ███╗   ██╗██╗   ██╗███╗   ███╗████████╗ █████╗ ██████╗ ██╗     ███████╗
 % ████╗  ██║██║   ██║████╗ ████║╚══██╔══╝██╔══██╗██╔══██╗██║     ██╔════╝
